@@ -1,11 +1,3 @@
-if (len(argv) < 2):
-  print('usbeval.py')
-  print('Evaluates a Lua script on a Playdate device, via USB')
-  print('Requires pdc from the Playdate SDK as well as the pyusb library')
-  print('Usage:')
-  print('python3 usbeval.py ./input.lua')
-  exit()
-
 import tempfile
 import subprocess
 import usb.core
@@ -15,6 +7,15 @@ from pathlib import Path
 from struct import unpack
 from zlib import decompress
 from time import sleep
+
+if (len(argv) < 2):
+  print('usbeval.py')
+  print('Evaluates a Lua script on a Playdate device, via USB')
+  print('Requires pdc from the Playdate SDK as well as the pyusb library')
+  print('Usage:')
+  print('python3 usbeval.py ./input.lua')
+  exit()
+
 
 # Playdate USB vendor and product IDs
 PLAYDATE_VID = 0x1331;
